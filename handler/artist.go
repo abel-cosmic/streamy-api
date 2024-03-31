@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/abel-cosmic/streamy-api/model"
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
@@ -12,7 +13,9 @@ type ArtistHandler struct {
 
 // Index to list all artists
 func (h ArtistHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.JSON(fiber.Map{"message": "This is a placeholder for listing all artist"})
+	var artists []model.Artist
+	h.DB.Find(&artists)
+	return ctx.JSON(fiber.Map{"message": artists})
 }
 
 // Show an artist

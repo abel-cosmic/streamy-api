@@ -38,5 +38,6 @@ func Connect() *gorm.DB {
 
 // Migrate tables
 func Migrate(db *gorm.DB) {
-	db.AutoMigrate(&model.Album{})
+	// Auto-migrate all the models
+	db.AutoMigrate(&model.Album{}, &model.Artist{}, &model.Interaction{}, &model.PasswordReset{}, &model.Playlist{}, &model.PlaylistSong{}, &model.Song{}, &model.User{})
 }
