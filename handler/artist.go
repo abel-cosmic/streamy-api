@@ -15,6 +15,7 @@ type ArtistHandler struct {
 func (h ArtistHandler) Index(ctx *fiber.Ctx) error {
 	var artists []model.Artist
 	h.DB.Find(&artists)
+
 	return ctx.JSON(fiber.Map{"message": artists})
 }
 
