@@ -15,3 +15,5 @@ tmp/
 # Environment variables
 .env
 go.sum
+cmd
+cmd/builds

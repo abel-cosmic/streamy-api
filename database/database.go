@@ -17,11 +17,6 @@ func Connect() *gorm.DB {
 	dbPass := config.Config("DB_PASS")
 	dbHost := config.Config("DB_HOST")
 	dbPort := config.Config("DB_PORT")
-	fmt.Println("DB_PORT:", dbPort)
-	fmt.Println("DB_USER:", dbUser)
-	fmt.Println("DB_HOST:", dbHost)
-	fmt.Println("DB_NAME:", dbName)
-	fmt.Println("DB_PASS:", dbPass)
 	conn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbUser, dbPass, dbHost, dbPort, dbName)
 
 	fmt.Println("Attempting to connect to the database...")
