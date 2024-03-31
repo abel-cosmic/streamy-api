@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		BodyLimit: 10 * 2048 * 2048,
+	})
 	db := connector.Connect()
 
 	app.Get("/", func(c *fiber.Ctx) error {
