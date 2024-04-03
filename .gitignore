@@ -17,3 +17,5 @@ tmp/
 go.sum
 cmd
 cmd/builds
+
+streamy-api
